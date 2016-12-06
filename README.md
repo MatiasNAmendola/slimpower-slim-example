@@ -16,9 +16,13 @@ Additionally, this extension implements json API's with great ease.
 
 ##Installation
 
+Create folder /var/www/slimpower and download this repository
+
 In terminal:
 
 ```sh
+    mkdir /var/www/slimpower
+    cd /var/www/slimpower
     composer require matiasnamendola/slimpower-slim-example
 ```
 
