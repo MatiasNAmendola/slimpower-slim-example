@@ -1,0 +1,31 @@
+{
+    "name": "matiasnamendola/slimpower-slim-example",
+    "description": "Example of slimpower-slim",
+    "keywords": [
+        "slim", "controller", "json", "API", "view", "middleware", "config"
+    ],
+    "homepage": "https://github.com/matiasnamendola/slimpower-slim-example",
+    "type": "library",
+    "version": "v0.0.1-alpha",
+    "minimum-stability": "alpha",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matias Nahuel Améndola",
+            "email": "soporte.esolutions@gmail.com",
+            "homepage": "http://node.software/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "slim/slim": "2.*",
+        "symfony/yaml": "v2.6.0",
+        "matiasnamendola/slimpower-slim": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "App"
+        }
+    }
+}
