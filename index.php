@@ -2,7 +2,7 @@
 
 require 'vendor/autoload.php';
 
-$app = new \SlimPower\Slim();
+$app = new \SlimPower\Slim\Slim();
 
 $app->config('debug', false);
 
@@ -14,9 +14,9 @@ $app->container->singleton('App\Home', function ($container) {
 });
 
 function APIrequest() {
-    $app = \Slim\Slim::getInstance();
-    $app->view(new \SlimPower\Middleware\jsonApi\JsonApiView());
-    $app->add(new \SlimPower\Middleware\jsonApi\JsonApiMiddleware());
+    $app = \SlimPower\Slim\Slim::getInstance();
+    $app->view(new \SlimPower\Slim\Middleware\Json\JsonView());
+    $app->add(new \SlimPower\Slim\Middleware\Json\JsonMiddleware());
 }
 
 // Set up routes
@@ -51,6 +51,14 @@ $app->addRoute(array(
     'methods' => array('GET'),
     'conditions' => array()
 ));
+
+//Default - None
+$configR = new \App\Config\RouteConfig(array());
+$routesR = $configR->get('routes');
+
+foreach ($routesR as $route) {
+    $app->addRoute($route);
+}
 
 $app->addRoute(array(
     'route' => '/error',
@@ -87,6 +95,6 @@ foreach ($routes as $route) {
     $app->addRoute($route);
 }
 
-$app->view(new \SlimPower\Middleware\jsonApi\JsonApiView("resource", "meta"));
-$app->add(new \SlimPower\Middleware\jsonApi\JsonApiMiddleware());
+$app->view(new \SlimPower\Slim\Middleware\Json\JsonView("resource", "meta"));
+$app->add(new \SlimPower\Slim\Middleware\Json\JsonMiddleware());
 $app->run();

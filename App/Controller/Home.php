@@ -20,11 +20,15 @@ class Home {
     }
 
     public function hello($name = 'test') {
-        echo "Hello, $name";
+        $this->app->render(200, array(
+            'msg' => "Hello, $name",
+        ));
     }
 
     public function bye($name = 'test') {
-        echo "Bye, $name";
+        $this->app->render(200, array(
+            'msg' => "Bye, $name",
+        ));
     }
 
     public function ups() {
@@ -48,9 +52,8 @@ class Home {
 
     // Init
     public function init() {
-        //$this->app->view(new \SlimPower\Middleware\jsonApi\JsonApiView());
-        //$this->app->add(new \SlimPower\Middleware\jsonApi\JsonApiMiddleware());
-        
+        //$this->app->view(new \SlimPower\Slim\Middleware\Json\JsonView());
+        //$this->app->add(new \SlimPower\Slim\Middleware\Json\JsonMiddleware());
         // do things now that app, request and response are set.
     }
 

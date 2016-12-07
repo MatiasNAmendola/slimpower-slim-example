@@ -1,7 +1,14 @@
-#SlimPower - Example
+#SlimPower Slim - Example
 
 [![Latest version][ico-version]][link-packagist]
-[![Total Downloads][ico-downloads]][link-downloads]
+[comment]: # ([![Total Downloads][ico-downloads]][link-downloads])
+
+[![Latest Stable Version](https://poser.pugx.org/matiasnamendola/slimpower-slim-example/version?format=flat-square)](https://packagist.org/packages/matiasnamendola/slimpower-slim) 
+[![Latest Unstable Version](https://poser.pugx.org/matiasnamendola/slimpower-slim-example/v/unstable?format=flat-square)](//packagist.org/packages/matiasnamendola/slimpower-slim) 
+[![Total Downloads](https://poser.pugx.org/matiasnamendola/slimpower-slim-example/downloads?format=flat-square)](https://packagist.org/packages/matiasnamendola/slimpower-slim) 
+[![Monthly Downloads](https://poser.pugx.org/matiasnamendola/slimpower-slim-example/d/monthly?format=flat-square)](https://packagist.org/packages/matiasnamendola/slimpower-slim)
+[![Daily Downloads](https://poser.pugx.org/matiasnamendola/slimpower-slim-example/d/daily?format=flat-square)](https://packagist.org/packages/matiasnamendola/slimpower-slim)
+[![composer.lock available](https://poser.pugx.org/matiasnamendola/slimpower-slim-example/composerlock?format=flat-square)](https://packagist.org/packages/matiasnamendola/slimpower-slim)
 
 An extension to [Slim Framework][1] that allows you use to dynamically
 instantiated controllers with action methods wherever you would use a
@@ -21,24 +28,23 @@ Create folder /var/www/slimpower and download this repository
 In terminal:
 
 ```sh
-    mkdir /var/www/slimpower
-    cd /var/www/slimpower
-    composer require matiasnamendola/slimpower-slim-example
+mkdir /var/www/slimpower
+cd /var/www/slimpower
+composer require matiasnamendola/slimpower-slim-example
 ```
 
 Or you can add use this as your composer.json:
 
 ```json
-    {
-        "require": {
-            "slim/slim": "2.*",
-            "matiasnamendola/slimpower-slim-example": "dev-master"
-        }
+{
+    "require": {
+        "slim/slim": "2.*",
+        "matiasnamendola/slimpower-slim-example": "dev-master"
     }
-
+}
 ```
 
-###.htaccess sample
+###.htaccess
 Here's an .htaccess sample for simple RESTful API's
 
 ```
@@ -90,15 +96,15 @@ with this content:
 Next, copy this in terminal:
 
 ```sh
-    sudo a2ensite 000-slimpower
-    sudo /etc/init.d/apache2 restart
+sudo a2ensite 000-slimpower
+sudo /etc/init.d/apache2 restart
 ```
 
 or 
 
 ```sh
-    sudo a2ensite 000-slimpower
-    sudo service apache2 restart
+sudo a2ensite 000-slimpower
+sudo service apache2 restart
 ```
 
 ##Security
