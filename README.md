@@ -1,4 +1,4 @@
-#SlimPower Slim - Example
+#SlimPower - Slim - Example
 
 [![Latest version][ico-version]][link-packagist]
 [comment]: # ([![Total Downloads][ico-downloads]][link-downloads])
