@@ -8,7 +8,7 @@ use SlimPower\AuthenticationManager\Interfaces\ManagerInterface;
 class SecManager extends AuthManager implements ManagerInterface {
 
     private function getParams() {
-        $app = $this->getApp();
+        $app = $this->app;
 
         $auth = array(
             'user' => $app->request->params('user'),
@@ -21,7 +21,7 @@ class SecManager extends AuthManager implements ManagerInterface {
     private function getHeader() {
         $auth = array('user' => '', 'password' => '');
 
-        $app = $this->getApp();
+        $app = $this->app;
 
         if ($app->request->headers->get("Authorization")) {
             $autentication = explode("&", $app->request->headers->get("Authorization"));
@@ -55,7 +55,7 @@ class SecManager extends AuthManager implements ManagerInterface {
     }
 
     protected function sendCredential($token) {
-        $app = $this->getApp();
+        $app = $this->app;
 
         $app->render(200, array(
             'token' => $token,
@@ -63,7 +63,7 @@ class SecManager extends AuthManager implements ManagerInterface {
     }
 
     protected function sendErrorResponse(\SlimPower\Authentication\Error $error) {
-        $app = $this->getApp();
+        $app = $this->app;
         $status = $error->getStatus();
 
         $app->render($status, array(
