@@ -23,6 +23,10 @@
         "symfony/yaml": "v2.6.0",
         "matiasnamendola/slimpower-slim": "dev-master",
         "matiasnamendola/slimpower-config": "dev-master",
+        "matiasnamendola/slimpower-jwt": "dev-master",
+        "matiasnamendola/slimpower-jwt-auth": "dev-master",
+        "matiasnamendola/slimpower-basic-auth": "dev-master",
+        "matiasnamendola/slimpower-auth-core": "dev-master",
         "matiasnamendola/slimpower-auth-manager": "dev-master"
     },
     "autoload": {
