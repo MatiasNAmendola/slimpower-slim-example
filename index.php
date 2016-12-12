@@ -102,7 +102,7 @@ $app->addRoute(array(
     'conditions' => array()
 ));
 
-$config = new \SlimPower\Config\Config("routes.json");
+$config = new \SlimPower\Config\Config("config.json");
 
 $routes = $config->get('routes');
 
