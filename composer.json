@@ -22,7 +22,8 @@
         "slim/slim": "2.*",
         "symfony/yaml": "v2.6.0",
         "matiasnamendola/slimpower-slim": "dev-master",
-        "matiasnamendola/slimpower-config": "dev-master"
+        "matiasnamendola/slimpower-config": "dev-master",
+        "matiasnamendola/slimpower-auth-manager": "dev-master"
     },
     "autoload": {
         "psr-4": {

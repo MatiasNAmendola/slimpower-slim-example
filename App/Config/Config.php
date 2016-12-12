@@ -57,5 +57,4 @@ ini_set('display_errors', (APP_ENV == 'development'));
 /**
  * Configuration for: Log
  */
-define('LOG_ENABLED', (APP_ENV == 'development'));
 define('LOG_FILE', APP_DIR . $config->get('logfile'));
