@@ -62,14 +62,4 @@ class SecManager extends AuthManager implements ManagerInterface {
         ));
     }
 
-    protected function sendErrorResponse(\SlimPower\Authentication\Error $error) {
-        $app = $this->app;
-        $status = $error->getStatus();
-
-        $app->render($status, array(
-            'code' => $error->getCode(),
-            'msg' => $error->getDescription(),
-        ));
-    }
-
 }
