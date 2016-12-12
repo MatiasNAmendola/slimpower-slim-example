@@ -10,11 +10,14 @@ class CustomError extends AbstractError implements ErrorInterface {
     protected function sendErrorResponse(\SlimPower\Authentication\Error $error) {
         $app = $this->app;
         $status = $error->getStatus();
-
-        $app->render($status, array(
+        
+        $data = array(
+            'error' => TRUE,
             'code' => $error->getCode(),
             'msg' => $error->getDescription(),
-        ));
+        );
+
+        $app->render($status, $data);
     }
 
 }
