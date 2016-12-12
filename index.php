@@ -1,7 +1,7 @@
 <?php
 
 require 'vendor/autoload.php';
-require 'Config/Config.php';
+require 'App/Config/Config.php';
 
 $logWriter = new \Slim\LogWriter(fopen(LOG_FILE, 'a'));
 
