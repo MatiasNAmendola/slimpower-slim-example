@@ -1,4 +1,14 @@
 {
+    "appname": "Demo API Restful",
+    "environment": "development",
+    "apppath": "/",
+    "authinheader": true,
+    "token": {
+        "secret": "secret",
+        "validity": 300,
+        "insecurepaths": ["/hello"],
+        "warningpaths": ["/ups"]
+    },
     "routes": [
         {
             "route": "/bye(/:name)",
@@ -15,7 +25,9 @@
             "action": "bye",
             "methods": ["GET"],
             "conditions": [
-                {"id": "[a-zA-Z]{3,}"}
+                {
+                    "id": "[a-zA-Z]{3,}"
+                }
             ]
         },
         {
@@ -26,5 +38,6 @@
             "methods": ["POST"],
             "conditions": []
         }
-    ]
+    ],
+    "logfile": "Logs/log.txt"
 }
