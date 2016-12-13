@@ -12,9 +12,10 @@ $app = new \SlimPower\Slim\Slim(array('mode' => APP_ENV,
     //'log.level' => \Slim\Log::INFO,
     'log.writer' => $logWriter));
 
-$authenticator = new SlimPower\Authentication\Callables\DemoAuthenticator($app);
+$authLogin = new SlimPower\Authentication\Callables\DemoAuthenticator($app);
+$authToken = new \SlimPower\Authentication\Callables\NullAuthenticator($app);
 $error = new App\Security\CustomError($app);
-$security = \App\Security\SecManager::getInstance($app, $authenticator, $error);
+$security = \App\Security\SecManager::getInstance($app, $authLogin, $authToken, $error);
 $security->addTokenRelaxed(unserialize(TOKEN_RELAXED));
 $security->addInsecurePaths(unserialize(INSECURE_PATH));
 $security->setWarningPaths(unserialize(WARNING_PATH));
