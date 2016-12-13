@@ -31,8 +31,13 @@ $app->container->singleton('App\Home', function ($container) {
 
 function APIrequest() {
     $app = \SlimPower\Slim\Slim::getInstance();
-    $app->view(new \SlimPower\Slim\Middleware\Json\JsonView());
-    $app->add(new \SlimPower\Slim\Middleware\Json\JsonMiddleware());
+
+    $app->add(new \SlimPower\Slim\Middleware\Json\Middleware($app, array(
+        'json.status' => true,
+        'json.override_error' => true,
+        'json.override_notfound' => true,
+        'json.debug' => (APP_ENV == 'development'),
+    )));
 }
 
 // Set up routes
@@ -123,6 +128,11 @@ $app->hook('slim.after', function () use ($app) {
     $app->log->debug('IP: ' . $request->getIp());
 });
 
-$app->view(new \SlimPower\Slim\Middleware\Json\JsonView("resource", "meta"));
-$app->add(new \SlimPower\Slim\Middleware\Json\JsonMiddleware());
+$app->add(new \SlimPower\Slim\Middleware\Json\Middleware($app, array(
+    'json.status' => true,
+    'json.override_error' => true,
+    'json.override_notfound' => true,
+    'json.debug' => (APP_ENV == 'development'),
+)));
+
 $app->run();

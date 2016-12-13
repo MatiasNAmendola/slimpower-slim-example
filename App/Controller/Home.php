@@ -52,8 +52,6 @@ class Home {
 
     // Init
     public function init() {
-        //$this->app->view(new \SlimPower\Slim\Middleware\Json\JsonView());
-        //$this->app->add(new \SlimPower\Slim\Middleware\Json\JsonMiddleware());
         // do things now that app, request and response are set.
     }
 

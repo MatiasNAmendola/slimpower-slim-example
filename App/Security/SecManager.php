@@ -22,19 +22,12 @@ class SecManager extends AuthManager implements ManagerInterface {
         $auth = array('user' => '', 'password' => '');
 
         $app = $this->app;
+        
+        $headers = $app->request->headers;
 
-        if ($app->request->headers->get("Authorization")) {
-            $autentication = explode("&", $app->request->headers->get("Authorization"));
-
-            foreach ($autentication as $param) {
-                $paramArr = explode("=", $param);
-
-                if (count($paramArr) > 1) {
-                    $paramKey = $paramArr[0];
-                    $paramVal = $paramArr[1];
-                    $auth[$paramKey] = $paramVal;
-                }
-            }
+        if ($headers->get("user") && $headers->get("password")) {
+            $auth['user'] = $headers->get("user");
+            $auth['password'] = $headers->get("password");
         }
 
         return $auth;

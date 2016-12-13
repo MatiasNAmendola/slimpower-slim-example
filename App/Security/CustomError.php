@@ -16,7 +16,7 @@ class CustomError extends AbstractError implements ErrorInterface {
             'code' => $error->getCode(),
             'msg' => $error->getDescription(),
         );
-
+        
         $app->render($status, $data);
     }
 
