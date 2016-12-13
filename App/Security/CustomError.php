@@ -2,10 +2,10 @@
 
 namespace App\Security;
 
-use SlimPower\Authentication\AbstractError;
+use SlimPower\Authentication\Abstracts\CallableError;
 use SlimPower\Authentication\Interfaces\ErrorInterface;
 
-class CustomError extends AbstractError implements ErrorInterface {
+class CustomError extends CallableError implements ErrorInterface {
     
     protected function sendErrorResponse(\SlimPower\Authentication\Error $error) {
         $app = $this->app;

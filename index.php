@@ -12,7 +12,7 @@ $app = new \SlimPower\Slim\Slim(array('mode' => APP_ENV,
     //'log.level' => \Slim\Log::INFO,
     'log.writer' => $logWriter));
 
-$authenticator = new SlimPower\Authentication\DemoAuthenticator($app);
+$authenticator = new SlimPower\Authentication\Callables\DemoAuthenticator($app);
 $error = new App\Security\CustomError($app);
 $security = \App\Security\SecManager::getInstance($app, $authenticator, $error);
 $security->addTokenRelaxed(unserialize(TOKEN_RELAXED));
