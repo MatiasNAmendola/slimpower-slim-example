@@ -48,9 +48,20 @@ Or you can add use this as your composer.json:
 Here's an .htaccess sample for simple RESTful API's
 
 ```
+<IfModule mod_rewrite.c>
 RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [QSA,L]
+</IfModule>
+```
+
+or 
+
+```
+<ifModule mod_headers.c>
+    Header always set Access-Control-Allow-Headers "Authorization"
+</ifModule>
 ```
 
 ###Apache VirtualHost
