@@ -133,7 +133,7 @@ $app->add(new \SlimPower\Slim\Middleware\Json\Middleware($app, array(
     'json.status' => true,
     'json.override_error' => true,
     'json.override_notfound' => true,
-    'json.debug' => (APP_ENV == 'development'),
+    'json.debug' => (APP_ENV == 'development')
 )));
 
 $app->run();
