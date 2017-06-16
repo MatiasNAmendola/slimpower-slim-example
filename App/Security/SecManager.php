@@ -12,8 +12,8 @@ class SecManager extends AuthManager implements ManagerInterface {
         $app = $this->app;
 
         $auth = array(
-            'user' => $app->request->params(LoginAuthMiddleware::KEY_USERNAME),
-            'password' => $app->request->params(LoginAuthMiddleware::KEY_PASSWORD)
+            LoginAuthMiddleware::KEY_USERNAME => $app->request->params(LoginAuthMiddleware::KEY_USERNAME),
+            LoginAuthMiddleware::KEY_PASSWORD => $app->request->params(LoginAuthMiddleware::KEY_PASSWORD)
         );
 
         return $auth;
