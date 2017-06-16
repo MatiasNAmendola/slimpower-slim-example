@@ -66,13 +66,13 @@ or
 
 ### Apache VirtualHost
 
-Create conf file '000-slimpower.conf' in folder '/etc/apache2/sites-available'
+Create conf file 'slimpower.conf' in folder '/etc/apache2/sites-available'
 with this content:
 
 ```conf
 <VirtualHost *:80>
     ServerAdmin     webmaster@localhost
-    ServerName      dev.slimpower.com.ar
+    ServerName      dev.slimpower.com
     DocumentRoot    /var/www/slimpower
     ErrorLog        /var/log/apache2/slimpower-custom-error.log
     CustomLog       /var/log/apache2/slimpower-custom.log common
