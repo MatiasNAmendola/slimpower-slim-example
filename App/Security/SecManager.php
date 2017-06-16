@@ -5,6 +5,7 @@ namespace App\Security;
 use SlimPower\AuthenticationManager\AuthManager;
 use SlimPower\AuthenticationManager\Interfaces\ManagerInterface;
 use SlimPower\Authentication\Abstracts\LoginAuthMiddleware;
+use SlimPower\Authentication\Abstracts\TokenAuthMiddleware;
 
 class SecManager extends AuthManager implements ManagerInterface {
 
@@ -52,7 +53,7 @@ class SecManager extends AuthManager implements ManagerInterface {
         $app = $this->app;
 
         $app->render(200, array(
-            'token' => $token,
+            TokenAuthMiddleware::KEY_TOKEN => $token,
         ));
     }
 
