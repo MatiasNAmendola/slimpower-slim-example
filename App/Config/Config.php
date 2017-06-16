@@ -19,7 +19,7 @@ define('DS', DIRECTORY_SEPARATOR);
  * Configuration for: Environment
  */
 define('APP_NAME', $config->get("appname"));
-define('APP_ENV', $config->get("environment", SlimPower\Slim\Slim::MODE_DEV));
+define('APP_ENV', $config->get("environment", \SlimPower\Slim\Slim::MODE_DEV));
 define('APP_SECURE', Net::isSecure());
 define('APP_PATH', $config->get("apppath"));
 define('APP_DIR', dirname(dirname(__DIR__)) . DS);
@@ -49,10 +49,10 @@ define("WARNING_PATH", serialize($token["warningpaths"]));
  * Configuration for: Error reporting
  * For more info about errors please @see http://php.net/manual/es/function.error-reporting.php
  */
-ini_set('error_reporting', (APP_ENV != SlimPower\Slim\Slim::MODE_PROD) ? E_ALL : 0 );
+ini_set('error_reporting', (APP_ENV != \SlimPower\Slim\Slim::MODE_PROD) ? E_ALL : 0 );
 
 // Error handling
-ini_set('display_errors', (APP_ENV != SlimPower\Slim\Slim::MODE_PROD));
+ini_set('display_errors', (APP_ENV != \SlimPower\Slim\Slim::MODE_PROD));
 
 /**
  * Configuration for: Log
